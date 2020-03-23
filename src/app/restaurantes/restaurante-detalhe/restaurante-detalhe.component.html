@@ -1,0 +1,48 @@
+<section class="section bg-gradient-info">
+    <div class="container">
+        <div class="row row-grid align-items-center">
+            <div class="col-md-6">
+                <div class="card bg-default shadow border-0">
+                    <img [src]="'./assets/img/theme/' + restaurant.image" class="card-img-top">
+                    <blockquote class="card-blockquote">
+                        <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95" class="svg-bg">
+                            <polygon points="0,52 583,95 0,95" class="fill-default" />
+                            <polygon points="0,42 583,95 683,0 0,95" opacity=".2" class="fill-default" />
+                        </svg>
+                        <h4 class="display-3 font-weight-bold text-white">{{restaurant.name}}</h4>
+                        <p class="lead text-italic text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ultrices mi et lobortis efficitur.
+                            Nam fringilla felis orci, id sodales eros suscipit sit amet. Praesent sagittis molestie libero,
+                            in luctus est consectetur vitae. Nunc sodales, libero laoreet fermentum.</p>
+                    </blockquote>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="pl-md-5">
+
+                    <h3>Tipo de cozinha: {{restaurant.typeLabel}}</h3>
+                    <h3>Preço: {{restaurant.pricingLabel}}</h3>
+                    <p class="lead">Endereço: {{restaurant.address}}</p>
+                    <p>Aenean lobortis sit amet elit a dictum. Duis molestie quam metus, sit amet suscipit augue mollis sed.
+                        Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                    <h3 *ngIf="bestClients.length < 2">Maior Fomentador:</h3>
+                    <h3 *ngIf="bestClients.length > 1">Maiores Fomentadores:</h3>
+                    <div class="row fomentadores">
+                        <div class="col-md-6 col-lg-4 mb-3" *ngFor="let user of bestClients">
+                            <div class="">
+                                <a [routerLink]="'/users/'+user.id">
+                                    <img [src]="'/assets/img/theme/'+user.image" class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">
+                                    <div class="pt-4 text-center">
+                                        <h5 class="title">
+                                            <span class="d-block mb-1">{{user.name}}</span>
+                                            <small class="h6">{{user.cargo}}</small>
+                                        </h5>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

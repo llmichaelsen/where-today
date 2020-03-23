@@ -1,0 +1,9 @@
+
+
+.bg-gradient-success * {
+    color: #fff;
+}
+
+img {
+    min-height: 120px;
+}

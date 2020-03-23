@@ -1,0 +1,69 @@
+<nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned">
+  <div class="container">
+    <a class="navbar-brand mr-lg-5" [routerLink]="['/home']">
+      <img src="./assets/img/brand/logo.png">
+    </a>
+    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
+          [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="navbar_global" [ngbCollapse]="isCollapsed">
+      <div class="navbar-collapse-header">
+        <div class="row">
+          <div class="col-6 collapse-brand">
+            <a [routerLink]="['/home']">
+              <img src="./assets/img/brand/logo.png">
+            </a>
+          </div>
+          <div class="col-6 collapse-close">
+            <button type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed"
+                  [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <ul class="navbar-nav navbar-nav-hover align-items-lg-right">
+        <li class="nav-item dropdown">
+          <a class="nav-link no-caret" data-toggle="dropdown" role="button">
+            <i class="ni ni-ui-04 d-lg-none"></i>
+            <span class="nav-link-inner--text">Menu</span>
+          </a>
+          <div class="dropdown-menu-xl dropdown-menu" >
+            <div class="dropdown-menu-inner">
+              <a routerLinkActive="active" [routerLink]="['/users']" class="media d-flex align-items-center">
+                <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                  <i class="ni ni-user-run"></i>
+                </div>
+                <div class="media-body ml-3">
+                  <h6 class="heading text-warning mb-md-1">Esfomeados</h6>
+                  <p class="description d-none d-md-inline-block mb-0">Nosso preparado time de profissionais sempre dispostos a opinar sobre as melhores opções gastrônomicas.</p>
+                </div>
+              </a>
+              <a routerLinkActive="active" [routerLink]="['/restaurants']" class="media d-flex align-items-center">
+                <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                  <i class="ni ni-square-pin"></i>
+                </div>
+                <div class="media-body ml-3">
+                  <h6 class="heading text-primary mb-md-1">Restaurantes</h6>
+                  <p class="description d-none d-md-inline-block mb-0">Estabelecimentos escolhidos a dedo pelo nosso certeiro time para compor as opções gastronômicas.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link no-caret dropdown-toggle nav-link" dropdownToggle data-toggle="dropdown" role="button">
+            <i class="ni ni-collection d-lg-none"></i>
+            <span class="nav-link-inner--text">{{user.name}}</span>
+          </a>
+          <div class="dropdown-menu">
+            <a [routerLink]="['/users/'+user.id]" class="dropdown-item">Meu perfil</a>
+            <a href="#" (click)="logout()" class="dropdown-item">Sair</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

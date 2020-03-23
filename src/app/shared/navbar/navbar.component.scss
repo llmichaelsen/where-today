@@ -1,0 +1,28 @@
+
+
+@media (min-width: 992px){
+    .navbar-expand-lg .navbar-nav {
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 992px){
+    .bg-gradient-primary {
+        * {
+            color: #fff;
+        }
+        img {
+            height: 100px;
+        }
+        .navbar-toggler > span {
+            background: #fff;
+        }
+    }
+}
+
+.navbar-brand img {
+    height: 115px;
+}
+
