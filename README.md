@@ -2,6 +2,10 @@
 
 Sistema desenvolvido para viabilizar uma integração democrática dentre colegas de trabalho, que lutam muito ao decidir um local de almoço que agrade a maioria. Esse sistema vem de forma prática facilitar esse processo e garantir uma amizade mais duradoura dentre o ambiente de trabalho.
 
+## Sobre o projeto
+- Projeto desenvolvido com Angular 9.
+- Utilizado um template gratuito para estrutura. Sua [lisença](https://github.com/llmichaelsen/where-today/blob/master/LICENSE.md).
+
 ## Inicializando o projeto
 - Faça o download ou clone a pasta do projeto
 - Com o terminal: vá até a raiz do projeto
