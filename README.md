@@ -4,7 +4,7 @@ Sistema desenvolvido para viabilizar uma integração democrática dentre colega
 
 ## Sobre o projeto
 - Projeto desenvolvido com Angular 9.
-- Utilizado um template gratuito para estrutura. Sua [lisença](https://github.com/llmichaelsen/where-today/blob/master/LICENSE.md).
+- Utilizado um template gratuito para estrutura. Sua [licença](https://github.com/llmichaelsen/where-today/blob/master/LICENSE.md).
 
 ## Inicializando o projeto
 - Faça o download ou clone a pasta do projeto
