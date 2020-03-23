@@ -2,6 +2,10 @@
 
 Sistema desenvolvido para viabilizar uma integração democrática dentre colegas de trabalho, que lutam muito ao decidir um local de almoço que agrade a maioria. Esse sistema vem de forma prática facilitar esse processo e garantir uma amizade mais duradoura dentre o ambiente de trabalho.
 
+## Sobre o projeto
+- Projeto desenvolvido com Angular 9.
+- Utilizado um template gratuito para estrutura. Sua [licença](https://github.com/llmichaelsen/where-today/blob/master/LICENSE.md).
+
 ## Inicializando o projeto
 - Faça o download ou clone a pasta do projeto
 - Com o terminal: vá até a raiz do projeto
@@ -27,9 +31,9 @@ Sistema desenvolvido para viabilizar uma integração democrática dentre colega
 
 - Não existe banco de dados ou estruturas back-end envolvidas. As informações disponibilizadas são geradas em tempo real e ficam em memória no javascript.
 - No primeiro acesso ou qualquer vez que a página for atualizada serão geradas **novas informações aleatórias** para popular o sistema.
-- E quais são essas informações que são geradas toda a vez?
--- **Restaurantes** diferentes, gerando aleatoriamente seus valores de nome, preço, tipo de cozinha, imagem, etc..
--- **Votações** diárias de 30 dias para trás. Nessas votações, cada um dos 8 usuários acima escolhe um dos restaurantes gerados no processo anterior. O usuário tem uma chance de 25% de não participar de uma votação, simulando uma possível ausência. As informações de votação são utilizadas para gerar métricas usadas em partes do sistema.
+#### E quais são essas informações que são geradas toda a vez?
+- **Restaurantes** diferentes, gerando aleatoriamente seus valores de nome, preço, tipo de cozinha, imagem, etc..
+- **Votações** diárias de 30 dias para trás. Nessas votações, cada um dos 8 usuários acima escolhe um dos restaurantes gerados no processo anterior. O usuário tem uma chance de 25% de não participar de uma votação, simulando uma possível ausência. As informações de votação são utilizadas para gerar métricas usadas em partes do sistema.
 
 
 ## Estruturas de informação
