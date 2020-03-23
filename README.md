@@ -18,14 +18,14 @@ Sistema desenvolvido para viabilizar uma integração democrática dentre colega
 
 ## Usuários para acessar o sistema
 
-- E-mail: 1@test  Password: 1234
-- E-mail: 2@test  Password: 1234
-- E-mail: 3@test  Password: 1234
-- E-mail: 4@test  Password: 1234
-- E-mail: 5@test  Password: 1234
-- E-mail: 6@test  Password: 1234
-- E-mail: 7@test  Password: 1234
-- E-mail: 8@test  Password: 1234
+- E-mail: teste1@teste  Password: 1234
+- E-mail: teste2@teste  Password: 1234
+- E-mail: teste3@teste  Password: 1234
+- E-mail: teste4@teste  Password: 1234
+- E-mail: teste5@teste  Password: 1234
+- E-mail: teste6@teste  Password: 1234
+- E-mail: teste7@teste  Password: 1234
+- E-mail: teste8@teste  Password: 1234
 
 ## Funcionamento do sistema
 
