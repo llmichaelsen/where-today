@@ -1,4 +1,22 @@
 
+const typeLabels = ['Comida de Boteco',
+    'Churrasco',
+    'Brasileira',
+    'Francesa',
+    'Hambúrguer',
+    'Italiana',
+    'Japonesa',
+    'Mexicana',
+    'Pizza',
+    'Portuguesa',
+    'Frutos do mar',
+    'Sushi',
+    'Nordestino',
+    'Minas Gerais',
+    'Vegetariana'
+];
+
+
 export class Restaurant {
 
     id: number;
@@ -26,26 +44,8 @@ export class Restaurant {
     }
 
     getPricingLabel() {
-        console.log('dd')
-        return "$".repeat(this.pricing);
+        return '$'.repeat(this.pricing);
     }
 
 
 }
-
-const typeLabels = ['Comida de Boteco',
-    'Churrasco',
-    'Brasileira',
-    'Francesa',
-    'Hambúrguer',
-    'Italiana',
-    'Japonesa',
-    'Mexicana',
-    'Pizza',
-    'Portuguesa',
-    'Frutos do mar',
-    'Sushi',
-    'Nordestino',
-    'Minas Gerais',
-    'Vegetariana'
-]

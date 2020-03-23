@@ -18,11 +18,11 @@ export class RestauranteDetalheComponent implements OnInit {
 
   ngOnInit(): void {
 
-    const id = parseInt(this.route.snapshot.paramMap.get('id'));
+    const id = parseInt(this.route.snapshot.paramMap.get('id'), 10);
 
     this.restaurant = this.dataServ.getRestaurantById(id);
 
-    this.bestClients = this.dataServ.getBestClients(this.restaurant.id);
+    this.bestClients = this.dataServ.getBestClients(id);
   }
 
 }

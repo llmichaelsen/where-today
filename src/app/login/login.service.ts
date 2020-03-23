@@ -31,7 +31,7 @@ export class LoginService {
 
   getUser() {
 
-    const id = parseInt(localStorage.getItem('user'));
+    const id = parseInt(localStorage.getItem('user'), 10);
     return users.find(el => el.id === id);
   }
 

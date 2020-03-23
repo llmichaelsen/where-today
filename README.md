@@ -7,8 +7,10 @@ Sistema desenvolvido para viabilizar uma integração democrática dentre colega
 - Com o terminal: vá até a raiz do projeto
 - Execute os comandos: 
 > npm intall
-> npm start
 
+> npm start
+- Para rodar os testes: 
+> npm test
 
 ## Usuários para acessar o sistema
 
@@ -45,7 +47,7 @@ Entidade que representa o voto. Guarda informações do usuário votando, restau
 ## Páginas
 
 ### Homepage
-- Aqui é exposto primeiramente qual o último restaurante vencedor na votação, para que todos possam se despir de preconceitos e preparar o psicológico.
+- Aqui é exposto primeiramente qual o último restaurante vencedor na votação, para que todos possam se despir de preconceitos e preparar o psicológico. O vencedor é escolhido com a maior quantidade de votos no dia. Se houver empate, o critério de desempate é com o menor preço. Se também for igual, sortea-se um dentre os remanescentes.
 - Na sessão abaixo é possível votar em qual restaurante você gostaria de democraticamente levar seus colegas em um lugar que gosta.
 - Na votação existe uma validação para que o mesmo restaurante não possa ser escolhido novamente. Ou seja, se você tentar votar no mesmo restaurante que foi o ganhador, mostrado na sessão acima, aparecerá uma mensagem de aviso.
 - É permitido apenas votar uma vez. Após o voto, o botão não ficará mais visível. Lembrando que: ao atualizar a página, os dados são gerados novamente, habilitando novamente o voto.

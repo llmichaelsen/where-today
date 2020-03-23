@@ -15,7 +15,7 @@
         <span class="span-50"></span>
         <span class="span-100"></span>
       </div>
-      <div class="container py-md">
+      <div *ngIf="dayWinner" class="container py-md">
         <div class="row justify-content-between align-items-center">
           <div class="col-lg-5 mb-5 mb-lg-0">
             <h1 class="text-white font-weight-light">{{dayWinner.name}} ganhou última votação</h1>
@@ -77,14 +77,14 @@
                             <i class="ni ni-check-bold"></i>
                           </span>
                         </div>
-                        <select name="" id="" class="form-control" placeholder="Restaurante" [disabled]="dataServ.votedToday" [(ngModel)]="selectedRestaurant" [ngModelOptions]="{standalone: true}">
+                        <select class="form-control" placeholder="Restaurante" [disabled]="dataServ.votedToday" [(ngModel)]="selectedRestaurant" [ngModelOptions]="{standalone: true}">
                           <option *ngFor="let rest of restaurants" [value]="rest.id">{{rest.name}}</option>
                         </select>
                       </div>
                     </div>
                     <div class="text-center">
-                      <button *ngIf="!dataServ.votedToday" type="button" class="btn btn-success my-4" (click)="vote(classic2)">Votar</button>
-                      <small *ngIf="dataServ.votedToday">Obrigado por participar.</small>
+                      <button id="botao-votar" *ngIf="!dataServ.votedToday" type="button" class="btn btn-success my-4" (click)="vote(classic2)">Votar</button>
+                      <small id="voted-message" *ngIf="dataServ.votedToday">Obrigado por participar.</small>
                     </div>
                   </form>
                 </div>

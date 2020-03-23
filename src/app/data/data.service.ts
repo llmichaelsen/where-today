@@ -11,13 +11,13 @@ export class DataService {
   restaurants: Restaurant[] = [];
   votes: Vote[] = [];
 
-  public votedToday: boolean = false;
+  public votedToday = false;
 
   constructor() { }
 
   generateRestaurants() {
 
-    for (var index = 1; index <= 8; index++) {
+    for (let index = 1; index <= 8; index++) {
 
       this.restaurants.push(
         new Restaurant(
@@ -28,21 +28,25 @@ export class DataService {
           Math.floor(Math.random() * 5) + 1,
           'img-' + (Math.floor(Math.random() * 4) + 1) + '.jpg'
         )
-      )
+      );
     }
   }
 
   mode(arr) {
-    let counts = arr.reduce((a, c) => {
+    const counts = arr.reduce((a, c) => {
       a[c] = (a[c] || 0) + 1;
       return a;
     }, {});
-    let maxCount = Math.max(...Object.values(counts) as any);
+    const maxCount = Math.max(...Object.values(counts) as any);
     return Object.keys(counts).filter(k => counts[k] === maxCount);
   }
 
   getRestaurants(): Restaurant[] {
     return this.restaurants;
+  }
+
+  getVotes(): Vote[] {
+    return this.votes;
   }
 
   getRestaurantById(id: number): Restaurant {
@@ -51,7 +55,7 @@ export class DataService {
 
   getTotalUserVoting(id): number {
 
-    const votes = this.votes.filter(v => v.user.id === id)
+    const votes = this.votes.filter(v => v.user.id === id);
     return votes.length;
   }
 
@@ -59,7 +63,7 @@ export class DataService {
 
     const votes = this.votes.filter(v => v.restaurant.id === id).map(v => v.user.id);
     const bestUsersIds = this.mode(votes);
-    const bestUsers = bestUsersIds.map(u => users.find(user => user.id === parseInt(u)));
+    const bestUsers = bestUsersIds.map(u => users.find(user => user.id === parseInt(u, 10)));
 
     return bestUsers;
   }
@@ -68,7 +72,7 @@ export class DataService {
 
     const votes = this.votes.filter(v => v.user.id === id).map(v => v.restaurant.id);
     const bestRestaurantsIds = this.mode(votes);
-    const bestRestaurants = bestRestaurantsIds.map(r => this.restaurants.find(rest => rest.id === parseInt(r)));
+    const bestRestaurants = bestRestaurantsIds.map(r => this.restaurants.find(rest => rest.id === parseInt(r, 10)));
 
     return bestRestaurants;
   }
@@ -78,22 +82,27 @@ export class DataService {
     const dayVotes = this.votes.filter(v => v.date.toDateString() === new Date().toDateString()).map(v => v.restaurant.id);
     const winners = this.mode(dayVotes);
 
-    if (winners.length > 1) { // em caso de empate em votos, o critério de desempate é pelo menor preço, se também for igual então é sorteado
+    if (winners.length > 1) {
 
-      const winnersRes = winners.map(r => this.restaurants.find(el => el.id === parseInt(r)));
+      // em caso de empate em votos, o critério de desempate
+      // é pelo menor preço, se também for igual então é sorteado
+
+      const winnersRes = winners.map(r => this.restaurants.find(el => el.id === parseInt(r, 10)));
       let lessPrice = 999;
       winnersRes.forEach(r => {
-        if (r.pricing < lessPrice) lessPrice = r.pricing;
+        if (r.pricing < lessPrice) {
+          lessPrice = r.pricing;
+        }
       });
 
       const lessPriceRestaurants = winnersRes.filter(r => r.pricing === lessPrice);
-      if (lessPriceRestaurants.length > 1){
-        return lessPriceRestaurants[Math.floor(Math.random() * lessPriceRestaurants.length)]
+      if (lessPriceRestaurants.length > 1) {
+        return lessPriceRestaurants[Math.floor(Math.random() * lessPriceRestaurants.length)];
       } else {
         return lessPriceRestaurants[0];
       }
     } else {
-      return this.restaurants.find(r => r.id === parseInt(winners[0]));
+      return this.restaurants.find(r => r.id === parseInt(winners[0], 10));
     }
   }
 
@@ -101,7 +110,7 @@ export class DataService {
     // 30 dias de votação anterior
 
     const hoje = new Date();
-    var dia = new Date();
+    const dia = new Date();
 
     while (daysDiff(hoje, dia) < 30) {
 
@@ -114,7 +123,7 @@ export class DataService {
               this.restaurants[Math.floor(Math.random() * this.restaurants.length)],
               new Date(dia)
             )
-          )
+          );
         }
       });
       dia.setDate(dia.getDate() - 1);

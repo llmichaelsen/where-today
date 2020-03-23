@@ -29,8 +29,8 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-    if (!this.loginServ.login(this.loginForm.value.email, this.loginForm.value.password)){
-      alert('Usuário e/ou inválidos.')
+    if (!this.loginServ.login(this.loginForm.value.email, this.loginForm.value.password)) {
+      alert('Usuário e/ou inválidos.');
     }
   }
 

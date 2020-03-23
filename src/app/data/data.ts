@@ -64,4 +64,4 @@ export const users = [
         password: '1234',
         image: 'team-6.jpg'
     }
-]
+];

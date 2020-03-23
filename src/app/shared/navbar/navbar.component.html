@@ -53,7 +53,7 @@
             </div>
           </div>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown" *ngIf="user">
           <a class="nav-link no-caret dropdown-toggle nav-link" dropdownToggle data-toggle="dropdown" role="button">
             <i class="ni ni-collection d-lg-none"></i>
             <span class="nav-link-inner--text">{{user.name}}</span>

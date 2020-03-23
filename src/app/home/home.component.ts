@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
 
     selectedRestaurant;
 
-    voted: boolean = false;
+    voted = false;
 
     focus;
     focus1;
@@ -30,12 +30,16 @@ export class HomeComponent implements OnInit {
     ngOnInit() {
         this.dayWinner = this.dataServ.getDayWinner();
         this.restaurants = this.dataServ.getRestaurants();
-        this.selectedRestaurant = this.restaurants[0].id;
+
+        if (this.restaurants.length) {
+            this.selectedRestaurant = this.restaurants[0].id;
+        }
     }
 
     vote(content) {
 
-        if (this.selectedRestaurant == this.dayWinner.id) {
+
+        if (parseInt(this.selectedRestaurant, 10) === this.dayWinner.id) {
             alert('Restaurante selecionado já foi escolhido esta semana!');
             return;
         }
@@ -44,6 +48,6 @@ export class HomeComponent implements OnInit {
     }
 
     open(content) {
-        this.modalService.open(content, { windowClass: 'modal-success', centered: true })
+        this.modalService.open(content, { windowClass: 'modal-success', centered: true });
     }
 }

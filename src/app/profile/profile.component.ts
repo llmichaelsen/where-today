@@ -21,12 +21,12 @@ export class ProfileComponent implements OnInit {
     constructor(private route: ActivatedRoute, private dataServ: DataService) { }
 
     ngOnInit() {
-        const id = parseInt(this.route.snapshot.paramMap.get('id'));
+        const id = parseInt(this.route.snapshot.paramMap.get('id'), 10);
 
         this.user = users.find(el => el.id === id);
-        this.favoriteRestaurants = this.dataServ.getFavoriteRestaurants(this.user.id);
+        this.favoriteRestaurants = this.dataServ.getFavoriteRestaurants(id);
 
-        this.totalVoting = this.dataServ.getTotalUserVoting(this.user.id);
+        this.totalVoting = this.dataServ.getTotalUserVoting(id);
     }
 
 }
